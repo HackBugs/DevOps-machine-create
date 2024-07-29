@@ -34,7 +34,7 @@ ONBOOT=yes
 NETBOOT=yes
 BOOTPROTO=dhcp
 TYPE=Ethernet
-NAME="enp0s3
+NAME="enp0s3"
 ```
 
 
