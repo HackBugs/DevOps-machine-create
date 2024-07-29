@@ -39,4 +39,6 @@ NAME="enp0s3"
 ```sh
 reboot
 ```
-
+```sh
+poweroff
+```
