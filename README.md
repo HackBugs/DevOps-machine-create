@@ -23,3 +23,20 @@ VMware Compatibility: Version 10+
 - cmd - nmcli connection up upp0s3
 
 ### Now you clone and write name jenkins what ever you want to run
+- vi /etc/ssh/sshd_config
+  edit - "PermitRootLogin Yes"
+  systemctl restart sshd
+
+### Ip Change
+- vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+```sh
+DEVICE="enp0s3"
+ONBOOT=yes
+NETBOOT=yes
+BOOTPROTO=dhcp
+TYPE=Ethernet
+NAME="enp0s3
+```
+
+
+
