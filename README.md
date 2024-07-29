@@ -27,7 +27,7 @@ VMware Compatibility: Version 10+
 - ``` systemctl restart sshd```
 
 ### Ip Change
-- ```sh vi /etc/sysconfig/network-scripts/ifcfg-enp0s3```
+- ``` vi /etc/sysconfig/network-scripts/ifcfg-enp0s3```
 ```sh
 DEVICE="enp0s3"
 ONBOOT=yes
