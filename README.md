@@ -36,6 +36,7 @@ BOOTPROTO=dhcp
 TYPE=Ethernet
 NAME="enp0s3"
 ```
-
-
+```sh
+reboot
+```
 
