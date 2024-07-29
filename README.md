@@ -20,7 +20,7 @@ VMware Compatibility: Version 10+
 - cmd - hostname -i
 - cmd - connection show
 - 
-- cmd - nmcli connection up upp0s3
+- cmd - nmcli connection up enp0s3
 
 ### Now you clone and write name jenkins what ever you want to run
 - vi /etc/ssh/sshd_config
