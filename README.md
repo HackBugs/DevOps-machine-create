@@ -49,3 +49,11 @@ reboot
 ```sh
 poweroff
 ```
+__________________________________________________________________________
+
+### Clone of machine
+ - Click on Cline and choose this options
+ - Nmae - Jenkins
+ - Path - you can leave defualt
+ - MAC address policy - Generate new mac address for all network adaptars
+ - Change hostname - hostnamectl st-hostname jenkins
