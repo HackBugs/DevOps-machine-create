@@ -57,3 +57,31 @@ __________________________________________________________________________
  - Path - you can leave defualt
  - MAC address policy - Generate new mac address for all network adaptars
  - Change hostname - hostnamectl st-hostname jenkins
+__________________________________________________________________________
+
+### This command will provide detailed information about the system, similar to the `systeminfo` command on Windows.
+
+- On Centos
+1. **Install**
+   ```bash
+   sudo yum install epel-release
+   sudo yum install inxi
+   ```
+
+2. **Run `inxi` to get system information:**
+   ```bash
+   inxi -Fxz
+   ```
+  
+- On Ubuntu
+1. **Install `inxi`:**
+   ```bash
+   sudo apt update
+   sudo apt install inxi
+   ```
+
+2. **Run `inxi` to get system information:**
+   ```bash
+   inxi -Fxz
+   ```
+
