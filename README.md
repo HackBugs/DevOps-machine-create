@@ -56,7 +56,10 @@ __________________________________________________________________________
  - Nmae - Jenkins
  - Path - you can leave defualt
  - MAC address policy - Generate new mac address for all network adaptars
- - Change hostname - hostnamectl st-hostname jenkins
+ - Change hostname
+```sh
+   hostnamectl st-hostname jenkins
+```
 __________________________________________________________________________
 
 ### This command will provide detailed information about the system, similar to the `systeminfo` command on Windows.
