@@ -58,7 +58,7 @@ __________________________________________________________________________
  - MAC address policy - Generate new mac address for all network adaptars
  - Change hostname
 ```sh
-   hostnamectl st-hostname jenkins
+   sudo hostnamectl set-hostname minikube
 ```
 __________________________________________________________________________
 
