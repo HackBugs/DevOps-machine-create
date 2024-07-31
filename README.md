@@ -58,7 +58,7 @@ __________________________________________________________________________
  - MAC address policy - Generate new mac address for all network adaptars
  - Change hostname
 ```sh
-   sudo hostnamectl set-hostname minikube
+sudo hostnamectl set-hostname minikube
 ```
 __________________________________________________________________________
 
