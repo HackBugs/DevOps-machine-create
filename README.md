@@ -82,12 +82,12 @@ __________________________________________________________________________
    sudo apt update
    sudo apt install inxi
    ```
- ### Download file from internet use this cmd
- `wget`: Best for downloading files and recursively fetching directories or websites.
- `curl`: Best for interacting with APIs, customizing requests, and handling a variety of protocols.
 
 2. **Run `inxi` to get system information:**
    ```bash
    inxi -Fxz
    ```
 
+ ### Download file from internet use this cmd
+ `wget`: Best for downloading files and recursively fetching directories or websites.
+ `curl`: Best for interacting with APIs, customizing requests, and handling a variety of protocols.
