@@ -88,6 +88,7 @@ cat /etc/netplan/*.yaml
 ip a
 sudo apt install net-tools
 ifconfig
+cat /etc/dhcp/dhclient.conf
 nmcli dev status
 nmcli dev show enp0s3
 ip link show
