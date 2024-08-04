@@ -39,17 +39,6 @@ Passwd @#123 - Enter password whatever you want
 - edit - ```PermitRootLogin Yes```
 - ```systemctl restart sshd```
 
-### For Ubuntu cmd
-```sh
-ip a
-sudo apt install net-tools
-ifconfig
-nmcli dev status
-nmcli dev show enp0s3
-ip link show
-ip a | grep -A 2 enp0s3
-```
-
 ### For CentOS Ip Change DHCP
 - ```vi /etc/sysconfig/network-scripts/ifcfg-enp0s3```
 ```sh
@@ -92,6 +81,17 @@ ps aux | grep dhclient
 ```
 ```sh
 cat /etc/netplan/*.yaml
+```
+
+### For Ubuntu cmd
+```sh
+ip a
+sudo apt install net-tools
+ifconfig
+nmcli dev status
+nmcli dev show enp0s3
+ip link show
+ip a | grep -A 2 enp0s3
 ```
 __________________________________________________________________________
 
