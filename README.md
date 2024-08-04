@@ -39,6 +39,18 @@ Passwd @#123 - Enter password whatever you want
 - edit - ```PermitRootLogin Yes```
 - ```systemctl restart sshd```
 
+### For Ubuntu cmd
+```sh
+sudo systemctl status NetworkManager
+sudo systemctl restart NetworkManager
+sudo apt install net-tools
+ifconfig
+nmcli dev status
+nmcli dev show enp0s3
+ip link show
+ip a | grep -A 2 enp0s3
+```
+
 ### Ip Change DHCP
 - ```vi /etc/sysconfig/network-scripts/ifcfg-enp0s3```
 ```sh
