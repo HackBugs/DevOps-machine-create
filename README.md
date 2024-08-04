@@ -27,7 +27,7 @@ Passwd @#123 - Enter password whatever you want
 ```sh
 - For ubuntu
 - cmd - snap install network-manager
-- apt - install network-manager 
+- cmd - apt install network-manager 
 ```  
 - cmd - ```apt-get update```
 - cmd - ```hostname -i```
