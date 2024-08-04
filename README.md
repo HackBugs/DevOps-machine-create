@@ -41,6 +41,7 @@ Passwd @#123 - Enter password whatever you want
 
 ### For Ubuntu cmd
 ```sh
+ip a
 sudo systemctl status NetworkManager
 sudo systemctl restart NetworkManager
 sudo apt install net-tools
