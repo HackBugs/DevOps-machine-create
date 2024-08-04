@@ -52,7 +52,7 @@ ip link show
 ip a | grep -A 2 enp0s3
 ```
 
-### Ip Change DHCP
+### For CentOS Ip Change DHCP
 - ```vi /etc/sysconfig/network-scripts/ifcfg-enp0s3```
 ```sh
 DEVICE="enp0s3"
@@ -67,6 +67,24 @@ reboot
 ```
 ```sh
 poweroff
+```
+
+### For Ubuntu Ip Change DHCP 
+```sh
+sudo vi /etc/netplan/01-netcfg.yaml
+```
+```sh
+network:
+  version: 2
+  ethernets:
+    enp0s3:
+      dhcp4: true
+```
+```sh
+sudo netplan apply
+```
+```sh
+ip a show enp0s3
 ```
 __________________________________________________________________________
 
