@@ -24,6 +24,12 @@ Passwd @#123 - Enter password whatever you want
 ```
 
 - Virtual box Machine Setting network - attached to - bridged adapeter choose name as your network
+```sh
+- For ubuntu
+- cmd - snap install network-manager
+- apt - install network-manager 
+```  
+- cmd - ```apt-get update```
 - cmd - ```hostname -i```
 - cmd - ```connection show ```
 - cmd - ```nmcli connection up enp0s3 ```
