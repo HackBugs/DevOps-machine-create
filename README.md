@@ -42,8 +42,6 @@ Passwd @#123 - Enter password whatever you want
 ### For Ubuntu cmd
 ```sh
 ip a
-sudo systemctl status NetworkManager
-sudo systemctl restart NetworkManager
 sudo apt install net-tools
 ifconfig
 nmcli dev status
@@ -76,6 +74,7 @@ sudo vi /etc/netplan/01-netcfg.yaml
 ```sh
 network:
   version: 2
+  renderer: NetworkManager
   ethernets:
     enp0s3:
       dhcp4: true
@@ -84,7 +83,15 @@ network:
 sudo netplan apply
 ```
 ```sh
+sudo systemctl status NetworkManager
+sudo systemctl restart NetworkManager
+```
+```sh
 ip a show enp0s3
+ps aux | grep dhclient
+```
+```sh
+cat /etc/netplan/*.yaml
 ```
 __________________________________________________________________________
 
