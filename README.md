@@ -20,7 +20,7 @@ VMware Compatibility: Version 10+
 ```sh
 Passwd root - change whatever you want
 useradd HackBugs
-Passwd @#123 - Enter password whatever you want
+Passwd @#1234 - Enter password whatever you want
 ```
 
 - Virtual box Machine Setting network - attached to - bridged adapeter choose name as your network
