@@ -136,3 +136,31 @@ __________________________________________________________________________
  ### Download file from internet use this cmd
  `wget`: Best for downloading files and recursively fetching directories or websites.
  `curl`: Best for interacting with APIs, customizing requests, and handling a variety of protocols.
+
+<hr>
+
+> ## RedHat RHEL configuration DHCP
+
+```
+nmcli device
+nmcli device status
+nmcli device connect eth0
+```
+```
+nmcli connection show
+nmcli connection up eth0
+ip addr show
+ip link show
+```
+```
+systemctl restart NetworkManager
+Net-tools
+dhcclient
+```
+```
+ls /etc/sysconfig/network-scripts/ifcfg-*
+"BOOTPROTO=dhcp
+ONBOOT=yes"
+```
+
+
