@@ -159,8 +159,14 @@ dhcclient
 ```
 ```
 ls /etc/sysconfig/network-scripts/ifcfg-*
-"BOOTPROTO=dhcp
-ONBOOT=yes"
 ```
+### Script
 
-
+```
+DEVICE="enp0s3"
+ONBOOT=yes
+NETBOOT=yes
+BOOTPROTO=dhcp
+TYPE=Ethernet
+NAME="enp0s3"
+```
