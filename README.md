@@ -1,5 +1,26 @@
 # DevOps-machine-create
 
+> ### configure your network interface to use DHCP (Dynamic Host Configuration Protocol) by setting the "BOOTPROTO" parameter to "dhcp" within the network interface configuration file, 
+typically located at `/etc/sysconfig/network-scripts/ifcfg-<interface>` where <interface> is the name of your network interface (like "eth0") and then restarting the network service. 
+
+```
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=dhcp
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=eui64
+NAME=ens160
+UUID=2e686545-0bae-462b-a8c5-a73694d3fa9b
+DEVICE=ens160
+ONBOOT=yes
+```
+
 ### Download Centos - CentOS Server 9 (64bit).vdi
  - Webiste - https://www.osboxes.org/centos/ - Download Server not Workstation
  - install Oracle VM virtual Box
