@@ -20,6 +20,27 @@ UUID=2e686545-0bae-462b-a8c5-a73694d3fa9b
 DEVICE=ens160
 ONBOOT=yes
 ```
+```
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=enp0s3
+UUID=f8ad76da-186d-4662-958e-1469bd5675d0
+DEVICE=enp0s3
+ONBOOT=yes
+IPADDR=192.168.1.124
+PREFIX=24
+GATEWAY=192.168.1.1
+
+```
 
 ### Download Centos - CentOS Server 9 (64bit).vdi
  - Webiste - https://www.osboxes.org/centos/ - Download Server not Workstation
