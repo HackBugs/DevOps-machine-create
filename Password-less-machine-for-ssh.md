@@ -1,0 +1,3 @@
+```
+ssh-keygen -t rsa
+```
