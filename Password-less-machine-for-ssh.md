@@ -47,3 +47,11 @@ scp /home/alam/.ssh/ssh-transfar-check/* root@192.168.1.124:/root/ssh-transfar-c
 ---
 
 Now, you should be able to SSH into `192.168.1.124` from `192.168.1.125` without a password and transfer files securely using SCP. 🚀
+
+--- 
+
+## **7. Transfer Files via SCP**
+```
+From - /home/alam/.ssh/ssh-transfar-check/
+To - /root/ssh-transfar-check-2
+```
