@@ -55,3 +55,25 @@ Now, you should be able to SSH into `192.168.1.124` from `192.168.1.125` without
 From - /home/alam/.ssh/ssh-transfar-check/
 To - /root/ssh-transfar-check-2
 ```
+
+---
+
+# Capture transfar scpt Output data Script
+
+```
+#!/bin/bash
+
+# Log file path
+LOG_FILE="/home/alam/.ssh/ssh-transfar-check/transfar-scp-log.txt"
+
+# Current Date and Time
+cur_time=$(date '+%d-%m-%Y %H:%M')
+
+# Append Date to Log File
+echo -e "\n===== Transfer Log: $cur_time =====" >> "$LOG_FILE"
+
+# Run SCP command and capture output
+script -q -c "scp /home/alam/.ssh/ssh-transfar-check/* root@192.168.1.124:/root/ssh-transfar-check-2" >> "$LOG_FILE" 2>&1
+```
+
+---
