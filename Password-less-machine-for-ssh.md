@@ -58,7 +58,7 @@ To - /root/ssh-transfar-check-2
 
 ---
 
-# Capture transfar scpt Output data Script
+> # Capture transfar scpt Output data Script
 
 ```
 #!/bin/bash
