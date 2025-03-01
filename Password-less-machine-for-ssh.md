@@ -50,7 +50,7 @@ Now, you should be able to SSH into `192.168.1.124` from `192.168.1.125` without
 
 --- 
 
-## **7. Transfer Files via SCP**
+## **7. Transfer Files From this location To that location**
 ```
 From - /home/alam/.ssh/ssh-transfar-check/
 To - /root/ssh-transfar-check-2
