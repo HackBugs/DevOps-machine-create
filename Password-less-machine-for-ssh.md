@@ -1,4 +1,4 @@
-> # steps for setting up a password-less SSH connection and transferring files using `scp`:  
+> # Steps for setting up a password-less SSH connection and transferring files using `scp`:  
 
 ---
 
