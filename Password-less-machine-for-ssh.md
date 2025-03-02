@@ -58,7 +58,7 @@ To - /root/ssh-transfar-check-2
 
 ---
 
-> # Capture transfar scpt Output data Script
+> # 1. Capture transfar scpt Output data Script / working 
 
 ```
 #!/bin/bash
@@ -77,3 +77,27 @@ script -q -c "scp /home/alam/.ssh/ssh-transfar-check/* root@192.168.1.124:/root/
 ```
 
 ---
+
+> # 2.  Capture transfar scpt Output data Script / not wroking properly
+
+```
+#!/bin/bash
+
+# Log file path
+LOG_FILE="/home/alam/.ssh/ssh-transfar-check/transfar-scp-log.txt"
+
+# Current Date and Time
+cur_time=$(date '+%d-%m-%Y %H:%M')
+
+# Append Date to Log File
+echo -e "\n===== Transfer Log: $cur_time =====" >> "$LOG_FILE"
+
+# Run SCP command with verbose mode and capture last 3 lines
+scp -v /home/alam/.ssh/ssh-transfar-check/* root@192.168.1.124:/root/ssh-transfar-check-2 2>&1 | tail -3 > a.txt
+
+# Append the last 3 lines to log file
+cat a.txt >> "$LOG_FILE"
+
+# Remove temporary file
+rm -f a.txt
+```
