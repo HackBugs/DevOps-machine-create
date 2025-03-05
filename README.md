@@ -3,14 +3,16 @@
 > ### configure your network interface to use DHCP (Dynamic Host Configuration Protocol) by setting the "BOOTPROTO" parameter to "dhcp" within the network interface configuration file, 
 typically located at `/etc/sysconfig/network-scripts/ifcfg-<interface>` where <interface> is the name of your network interface (like "eth0") and then restarting the network service. 
 
-- systemctl restart NetworkManager
-- nmcli connection reload
-- nmcli device status
-- nmcli connection down enp0s3 && nmcli connection up enp0s3
+```
+systemctl restart NetworkManager
+nmcli connection reload
+nmcli device status
+nmcli connection down enp0s3 && nmcli connection up enp0s3
 
-- ip link show
-- ip a
-- ifconfig -a
+ip link show
+ip a
+ifconfig -a
+```
 
 ```
 TYPE=Ethernet
