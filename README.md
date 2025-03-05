@@ -73,6 +73,9 @@ nmcli connection down enp0s3 && nmcli connection up enp0s3
 ip link show
 ip a
 ifconfig -a
+
+nmcli connection show enp0s3
+nmcli connection show
 ```
 
 ```
