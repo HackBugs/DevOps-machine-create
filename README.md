@@ -1,5 +1,66 @@
 # DevOps-machine-create
 
+## Commands
+```
+arp -n
+nmcli con down enp0s3 && nmcli con up enp0s3
+ifdown enp0s3 && ifup enp0s3
+systemctl restart NetworkManager
+
+nmcli connection down enp0s3
+nmcli connection up enp0s3
+
+ip link set enp0s3 down
+ip link set enp0s3 up
+
+ip neigh flush all
+arp -d 192.168.1.1
+
+nmcli con mod enp0s3 ipv4.method manual ipv4.addresses 192.168.1.70/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8
+nmcli con up enp0s3
+
+systemctl restart NetworkManager
+ip route show
+
+ip route add default via 192.168.1.1 dev enp0s3
+
+iptables -L -n
+firewall-cmd --list-all
+getenforce
+
+setenforce 0
+
+------------------------------------
+
+nmcli con mod enp0s3 ipv4.method manual ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8
+nmcli con up enp0s3
+
+ip neigh flush all
+systemctl restart NetworkManager
+
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+ping google.com
+
+systemctl stop firewalld
+systemctl disable firewalld
+
+firewall-cmd --add-service=dns --permanent
+firewall-cmd --add-masquerade --permanent
+firewall-cmd --reload
+
+setenforce 0
+ping google.com
+
+sed -i 's/^SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+reboot
+
+ip route show
+arp -n
+ping -c 4 192.168.1.1
+ping -c 4 8.8.8.8
+ping -c 4 google.com
+```
+
 > ### configure your network interface to use DHCP (Dynamic Host Configuration Protocol) by setting the "BOOTPROTO" parameter to "dhcp" within the network interface configuration file, 
 typically located at `/etc/sysconfig/network-scripts/ifcfg-<interface>` where <interface> is the name of your network interface (like "eth0") and then restarting the network service. 
 
