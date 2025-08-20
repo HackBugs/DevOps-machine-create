@@ -1,6 +1,6 @@
 > # 1. **Windows Server 2022 Datacenter (Desktop Experience)** setting for **network configuration issue** 
 - Windowas [Link](https://github.com/massgravel/Microsoft-Activation-Scripts?tab=readme-ov-file)
-- Key [Link](https://massgrave.dev/)
+- Key [Link](https://massgrave.dev/) - DXG7C-N36C4-C4HTG-X4T3X-2YV77
 ```
 1. **Windows Server 2022 Standard** (Core)
 2. **Windows Server 2022 Standard (Desktop Experience)**
