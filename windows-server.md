@@ -126,5 +126,70 @@ Agar aapko **sirf host machine se ping karna hai** to NAT + Port Forwarding bhi 
 
 ---
 
+> # 4. **VirtualBox VM me Windows Server 2022 install karke Remote Desktop enable** kar diya hai aur ab **host PC se connect ho ja rahe ho**. Ab aap chahte ho ki **dusre place se (public internet)** bhi connect kar sako.
+
+Ye 3 step me possible hai 👇
+
+---
+
+## 🔹 Step 1: VirtualBox Network Setting
+
+By default VirtualBox VM **NAT** pe hota hai, jo sirf host ko access deta hai. Aapke paas do option hain:
+
+### Option A → **Bridged Adapter** (easy way)
+
+* VirtualBox me VM select karo → **Settings → Network**.
+* "Attached to" dropdown me **Bridged Adapter** select karo.
+* Phir VM ko restart karo.
+* Ab VM ko **aapke broadband router se direct ek IP milega (192.168.x.x)** jaise normal PC ko milta hai.
+
+👉 Is IP ko use karke same LAN me koi bhi connect kar sakta hai.
+
+### Option B → **NAT + Port Forwarding**
+
+Agar aap NAT use karna chahte ho:
+
+* VirtualBox → VM Settings → Network → Advanced → Port Forwarding.
+* Add rule:
+
+  * Protocol: TCP
+  * Host Port: `50000` (ya koi bhi custom)
+  * Guest IP: `192.168.x.x` (VM ka local IP)
+  * Guest Port: `3389` (RDP port)
+
+👉 Ab aap **host PC ke public IP:50000** se connect kar sakte ho.
+
+---
+
+## 🔹 Step 2: Router me Port Forwarding
+
+Abhi tak sirf **local network** se connect ho paoge. Agar aapko **duniya ke kahin se bhi RDP chahiye**, to:
+
+1. Apne **broadband router** ke web panel me login karo (192.168.1.1 jaisa hota hai).
+2. **Port Forwarding / Virtual Server** option dhoondo.
+3. Rule banao:
+
+   * Public Port: `50000` (jo aapne VirtualBox NAT me set kiya)
+   * Forward to: `192.168.x.x:3389` (aapke VM ka internal IP)
+
+Ab jo bhi aapka **Public IP hai (ISP ka)**, uspe connect karke RDP chal jaayega.
+
+Example:
+
+```
+mstsc → 203.91.xx.xx:50000
+```
+
+---
+
+## 🔹 Step 3: Security Precautions ⚠️
+
+Public RDP open karna risky hota hai. Attackers brute-force karte rehte hain. Isliye:
+✅ Strong password rakho.
+✅ Agar possible ho to RDP port `3389` change karke koi aur rakho.
+✅ Firewall me rule lagao ki sirf specific IPs se RDP allow ho.
+✅ Best & secure way: **VPN setup karo (OpenVPN, WireGuard)** aur phir sirf VPN ke andar RDP allow karo.
+
+---
 
 
