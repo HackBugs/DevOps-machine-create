@@ -2,7 +2,7 @@
 https://www.youtube.com/watch?v=e_z9-w2EHHw
 https://youtu.be/yQtI8JdbNqM?si=amzlENiuTgheKxWf
 
-- Spring Boot - [Spring Boot ](https://youtu.be/zxHcHq-xfeM?si=uvsMldtYyfxkBz5N)
+- [Spring Boot ](https://youtu.be/zxHcHq-xfeM?si=uvsMldtYyfxkBz5N)
 - [Spring Boot Project for Beginners](https://youtu.be/vlz9ina4Usk?si=orpBxQDTBd8be_Ds)
 
 > # 1. **Windows Server 2022 Datacenter (Desktop Experience)** setting for **network configuration issue** 
