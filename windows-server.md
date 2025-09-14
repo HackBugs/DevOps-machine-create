@@ -1,4 +1,6 @@
 
+- https://www.middlewareinventory.com/blog/sample-web-application-war-file-download/
+
 https://www.youtube.com/watch?v=e_z9-w2EHHw
 https://youtu.be/yQtI8JdbNqM?si=amzlENiuTgheKxWf
 
