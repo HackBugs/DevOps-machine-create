@@ -1,5 +1,6 @@
 
 - https://www.middlewareinventory.com/blog/sample-web-application-war-file-download/
+- http://csci.viu.ca/~barskym/teaching/DM2012/labs/LAB6/SampleApp.html
 
 https://www.youtube.com/watch?v=e_z9-w2EHHw
 https://youtu.be/yQtI8JdbNqM?si=amzlENiuTgheKxWf
