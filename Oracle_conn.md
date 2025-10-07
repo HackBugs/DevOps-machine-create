@@ -1,3 +1,89 @@
+> # Ham `PowerSheel` windows pe `SSH` install karke bina putty ke connect krayenge - command ye follow karo 
+
+1. **Port 1521 reachable hai** → `Test-NetConnection` se confirm hua ✅
+2. **`system/system@192.168.1.124:1521/oradb.localdomain`** CMD/PowerShell me direct type kiya → ye fail hua kyunki **ye SQL*Plus ka connection string hai, PowerShell command nahi** ❌
+3. **OpenSSH install karne ki attempt** → failed, kyunki **admin privileges required** ⚠️
+
+---
+
+### Step-by-step solution for your case
+
+Aap Windows CMD/PowerShell se bina PuTTY/MobaXterm kaise connect karenge aur Oracle VM ke database tak pohonchenge:
+
+---
+
+## 1️⃣ Option A — SSH using OpenSSH (recommended)
+
+#### Step 1 — Admin privilege PowerShell
+
+* Press **Windows key → type PowerShell → Right click → Run as Administrator**
+* Fir run karo:
+
+```powershell
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+```
+
+* Ye **Windows me SSH client install** kar dega.
+
+#### Step 2 — SSH to VM
+
+```powershell
+ssh oracle@192.168.1.124
+```
+
+> **Note:** `oracle` = VM ka OS user (jo aapko VM pe login deta hai)
+> `system` = Oracle DB user, not OS user.
+
+#### Step 3 — Run SQL*Plus on VM
+
+VM shell me:
+
+```bash
+sqlplus system/system@//localhost:1521/oradb.localdomain
+```
+
+---
+
+## 2️⃣ Option B — Use **SQL Developer or DBeaver** (GUI, no SQL*Plus install needed)
+
+1. Download SQL Developer (Oracle free tool) or DBeaver (open source)
+2. Create new connection:
+
+   * **Hostname:** 192.168.1.124
+   * **Port:** 1521
+   * **Service Name:** oradb.localdomain
+   * **Username:** system
+   * **Password:** system
+3. Test → Connect ✅
+
+> Ye option easiest hai agar aap Windows pe SQL*Plus install nahi karna chahte.
+
+---
+
+## 3️⃣ Option C — SSH Tunnel + Local SQL Client
+
+Agar future me aapko **local SQL client** se connect karna hai:
+
+```powershell
+# Step 1: SSH tunnel
+ssh -f -N -L 1521:localhost:1521 oracle@192.168.1.124
+
+# Step 2: Connect locally
+sqlplus system/system@//localhost:1521/oradb.localdomain
+```
+
+> Isse Windows pe local port 1521 → VM Oracle port 1521 tunnel ho jata hai.
+
+---
+
+### 🔹 Important Notes
+
+* `system/system@...` **direct PowerShell me type mat karo** — ye SQL*Plus syntax hai. CMD/PowerShell me run karne ke liye **SQL*Plus installed hona chahiye**.
+* Agar admin access nahi hai → SSH client install nahi hoga → Option B (SQL Developer) best hai.
+* **OS user ≠ DB user**: SSH login ke liye VM ka OS user chahiye (jaise `oracle`), DB login ke liye DB user (`system`) chahiye.
+
+---
+
 > # **Oracle Linux / RHEL VM me network troubleshoot and setup useful Linux commands** in **bash code block**
 ---
 
